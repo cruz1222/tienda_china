@@ -1,8 +1,7 @@
 # Mapeo de Pantallas, Flujos y Definición de Requerimientos — GroStop
 
 **Proyecto:** GroStop (E-Commerce Grocery Store)  
-**Autor:** Andrea Dalith Zavala Barbosa (Desarrollador Líder / Core)  
-**Equipo:** Syntax Squad  
+**Autor:** Andrea Dalith Zavala Barbosa   
 
 ---
 
