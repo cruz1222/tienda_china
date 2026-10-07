@@ -106,3 +106,35 @@ graph TD
     M -- Confirmar --> N[RF-09: Procesar Orden y Descontar Stock]
     N --> C
     C -- Stock Actualizado --> O([Fin: Compra Exitosa y Pedido Confirmado])
+
+## 6. Diagrama de Casos de Uso
+
+```mermaid
+graph LR
+    subgraph Actores
+        User((Cliente / Usuario))
+        Admin((Administrador))
+    end
+
+    subgraph Sistema Tienda China
+        UC1[CU-01: Registrar Cuenta]
+        UC2[CU-02: Iniciar Sesión]
+        UC3[CU-03: Consultar Catálogo]
+        UC4[CU-04: Ver Detalle de Producto]
+        UC5[CU-05: Agregar al Carrito]
+        UC6[CU-06: Procesar / Confirmar Compra]
+        UC7[CU-07: Cerrar Sesión]
+        UC8[CU-08: Gestionar Inventario y Productos]
+    end
+
+    User --> UC1
+    User --> UC2
+    User --> UC3
+    User --> UC4
+    User --> UC5
+    User --> UC6
+    User --> UC7
+
+    Admin --> UC2
+    Admin --> UC8
+    Admin --> UC7
