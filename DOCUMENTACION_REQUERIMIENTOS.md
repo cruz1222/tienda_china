@@ -75,3 +75,34 @@ Atributos de calidad, rendimiento, entorno operativo y seguridad que el sistema 
 | **Should have** *(Importantes)* | RF-04, RF-06, RF-09, RNF-01, RNF-04 |
 | **Could have** *(Futuras iteraciones)* | Pasarela de pagos externa (Stripe/PayPal), sistema de comentarios y valoraciones por producto. |
 | **Won't have** *(Fuera del alcance actual)* | Aplicación móvil nativa (Android/iOS), facturación electrónica automática. |
+
+## 5. Diagrama de Flujo del Proceso
+
+```mermaid
+graph TD
+    A([Inicio: Usuario entra a la tienda]) --> B[RF-05: Consultar Catálogo de Productos]
+    B --> C[(Base de Datos MySQL: online_store)]
+    C --> D[Cargar Productos en la Interfaz]
+    
+    D --> E{¿El usuario quiere comprar?}
+    
+    E -- No --> F[Explorar productos / Ver detalles RF-06]
+    F --> D
+    
+    E -- Sí --> G{¿Sesión iniciada? RF-03}
+    
+    G -- No --> H[Formulario de Inicio de Sesión / Registro]
+    H --> I[RF-01 / RF-02: Validar credenciales y hash RNF-02]
+    I --> C
+    C -- Credenciales Válidas --> J[Crear Sesión de Usuario]
+    J --> K[RF-07: Agregar Producto al Carrito]
+    
+    G -- Sí --> K
+    
+    K --> L[RF-08: Calcular Total y Subtotales]
+    L --> M{¿Confirmar Compra?}
+    
+    M -- Cancelar --> D
+    M -- Confirmar --> N[RF-09: Procesar Orden y Descontar Stock]
+    N --> C
+    C -- Stock Actualizado --> O([Fin: Compra Exitosa y Pedido Confirmado])
