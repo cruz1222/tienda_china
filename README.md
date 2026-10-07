@@ -91,3 +91,6 @@ Accede a la aplicación ingresando desde tu navegador a `http://127.0.0.1:5000` 
 ### 🛡️ Administrador (`admin`)
 * **ID / Usuario:** `1`
 * **Contraseña:** `akgoel@283`
+
+<img width="1600" height="880" alt="login_screen" src="https://github.com/user-attachments/assets/18fef4ad-922d-45eb-9551-5b54aa5cf340" />
+
