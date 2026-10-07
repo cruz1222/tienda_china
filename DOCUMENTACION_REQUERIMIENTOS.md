@@ -105,11 +105,8 @@ graph TD
     M -- Cancelar --> D
     M -- Confirmar --> N[RF-09: Procesar Orden y Descontar Stock]
     N --> C
-    C -- Stock Actualizado --> O([Fin: Compra Exitosa y Pedido Confirmado])```
+    C -- Stock Actualizado --> O([Fin: Compra Exitosa y Pedido Confirmado])
 
-## 6. Diagrama de Casos de Uso
-
-```mermaid
 graph LR
     subgraph Actores
         User((Cliente / Usuario))
@@ -137,4 +134,4 @@ graph LR
 
     Admin --> UC2
     Admin --> UC8
-    Admin --> UC7```
+    Admin --> UC7
