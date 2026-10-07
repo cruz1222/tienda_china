@@ -109,5 +109,37 @@ graph TD
     User --> UC7
 
     Admin --> UC2
+
+## Diagrama de Casos de Uso
+
+```mermaid
+graph LR
+    subgraph Actores
+        Cliente((Cliente / Usuario))
+        Admin((Administrador / Vendedor))
+    end
+
+    subgraph Sistema Tienda China
+        UC1[CU01: Registrar Cuenta]
+        UC2[CU02: Iniciar Sesión]
+        UC3[CU03: Consultar Catálogo]
+        UC4[CU04: Ver Detalle de Producto]
+        UC5[CU05: Comprar / Agregar Producto]
+        UC6[CU06: Cerrar Sesión]
+        UC7[CU07: Registrar / Modificar Producto]
+        UC8[CU08: Consultar Inventario General]
+    end
+
+    Cliente --> UC1
+    Cliente --> UC2
+    Cliente --> UC3
+    Cliente --> UC4
+    Cliente --> UC5
+    Cliente --> UC6
+
+    Admin --> UC2
+    Admin --> UC7
+    Admin --> UC8
+    Admin --> UC6
     Admin --> UC8
     Admin --> UC7
